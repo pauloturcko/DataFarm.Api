@@ -1,4 +1,4 @@
-﻿namespace DataFarm.Api.Domain.Animais
+﻿namespace DataFarm.Api.Domain.Animais.Enum
 {
     public enum RacaEnum
     {
