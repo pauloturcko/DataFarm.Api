@@ -1,4 +1,4 @@
-﻿namespace DataFarm.Api.Domain.Animais
+﻿namespace DataFarm.Api.Domain.Animais.Aggregates
 {
     public class Peso
     {
