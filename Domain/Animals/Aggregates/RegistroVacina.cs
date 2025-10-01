@@ -4,7 +4,8 @@ namespace DataFarm.Api.Domain.Animais.Aggregates
 {
     public class RegistroVacina
     {
-        public Insumo? Insumo { get; set; }
+        // Foreing Key que aponta para Insumo.cs
+        public int InsumoId { get; set; }
         public DateOnly DataAplicacao { get; set; }
     }
 }

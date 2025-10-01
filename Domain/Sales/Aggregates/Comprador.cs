@@ -2,6 +2,7 @@
 
 public class Comprador
 {
+    public int Id { get; set; }
     public string? EmpresaNome { get; set; }
     public string? Cnpj { get; set; }
     public string? Endereco { get; set; }
