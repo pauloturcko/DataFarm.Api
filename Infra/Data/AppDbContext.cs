@@ -1,4 +1,5 @@
 ﻿using DataFarm.Api.Domain.Animais;
+using DataFarm.Api.Domain.Config;
 using DataFarm.Api.Domain.MeatPrice;
 using DataFarm.Api.Domain.Purchase;
 using DataFarm.Api.Domain.Purchase.Aggregates;
@@ -28,6 +29,7 @@ public class AppDbContext : DbContext
     public DbSet<Fornecedor> Fornecedores { get; set; } // Fornecedor é um agregado
     public DbSet<PrecoCarne> PrecosCarne { get; set; }
     public DbSet<Insumo> Insumos { get; set; } // Insumo é uma entidade compartilhada
+    public DbSet<FarmConfig> FarmConfigs { get; set; }
 
     // ====================================================================
 
