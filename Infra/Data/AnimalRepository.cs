@@ -52,4 +52,9 @@ public class AnimalRepository : IAnimalRepository
         // Retorna true se pelo menos uma linha foi alterada (> 0)
         return await _context.SaveChangesAsync() > 0;
     }
+
+    public async Task<List<Animal>> GetAllAsync()
+    {
+        return await _context.Animals.ToListAsync();
+    }
 }
