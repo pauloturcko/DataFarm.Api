@@ -23,7 +23,7 @@ public class AnimalService : IAnimalService
         var farmConfig = await _farmConfigRepository.GetFarmConfigAsync();
         var currentAnimals = await _animalRepository.CountAllAsync();
 
-        if (currentAnimals < farmConfig.MaxAnimalCapacity)
+        if ( currentAnimals >= farmConfig.MaxAnimalCapacity)
         {
             throw new AnimalsMaxCapacityReachedException(
                 "Não foi possível realizar o cadastro. Capacidade máxima de animais atingida.");
@@ -34,4 +34,30 @@ public class AnimalService : IAnimalService
         return animal;
      
     }
+
+    public async Task<Animal?> GetAnimalByIdAsync(int id)
+    {
+        var animal = await _animalRepository.GetByIdAsync(id);
+
+        if (animal == null)
+        {
+            throw new NotFoundException(
+                "animal", id);
+        }
+        
+        return animal;
+    }
+
+    public async Task<List<Animal>> GetAnimalListAsync()
+    {
+        var animals = await _animalRepository.GetAllAsync();
+
+        if (animals.Count == 0)
+        {
+            throw new NotFoundAllException("Nenhum registro foi encontrado.");
+        }
+        
+        return animals;
+    }
+    
 }

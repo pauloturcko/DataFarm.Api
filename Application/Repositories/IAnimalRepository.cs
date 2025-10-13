@@ -15,4 +15,6 @@ public interface IAnimalRepository
     Task<int> CountAllAsync();
     
     Task<bool> SaveChangesAsync();
+    
+    Task<List<Animal>> GetAllAsync();
 }
