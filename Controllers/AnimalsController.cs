@@ -58,7 +58,7 @@ public class AnimalsController : ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Ocorreu um erro interno ao processar a requisição.", errorDetail = ex.Message });
+            return StatusCode(500, new { message = "Ocorreu um erro ao processar a requisição.", errorDetail = ex.Message });
         }
     }
     
@@ -77,7 +77,7 @@ public class AnimalsController : ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new {message = "Erro ao buscar animal.", errorDetail = ex.Message });
+            return StatusCode(500, new {message = "Ocorreu um erro ao processar a requisição.", errorDetail = ex.Message });
         }
     }
 
@@ -96,7 +96,46 @@ public class AnimalsController : ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new {message = "Erro ao buscar animais.", errorDetail = ex.Message });
+            return StatusCode(500, new {message = "Ocorreu um erro ao processar a requisição.", errorDetail = ex.Message });
         }
     }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        try
+        {
+            var succes = await _animalService.DeleteAnimalAsync(id);
+
+            return NoContent();
+        }
+        catch (NotFoundException ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Ocorreu um erro ao processar a requisição.", errorDetail = ex.Message });
+        }
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateAnimalRequest request)
+    {
+        try
+        {
+            var animalAtualizado = await _animalService.UpdateAnimalAsync(id, request);
+
+            return Ok(animalAtualizado);
+        }
+        catch (NotFoundException ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Ocorreu um erro ao processar a requisição.", errorDetail = ex.Message });
+        }
+    }
+    
 }

@@ -12,7 +12,9 @@ public interface IAnimalService
     // R
     Task<List<Animal>> GetAnimalListAsync();
     // U
-    Task<Animal?> UpdateAnimalAsync(UpdateAnimalRequest request);
+    Task<Animal?> UpdateAnimalAsync(int id, UpdateAnimalRequest request);
     // D
     Task<bool> DeleteAnimalAsync(int id);
+    
+    Task<Animal?> RegisterWeightAsync(RegisterWeightRequest request);
 }
