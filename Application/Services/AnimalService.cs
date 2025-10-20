@@ -1,11 +1,8 @@
 ﻿using DataFarm.Api.Domain.Animais;
-using DataFarm.Api.Domain.Config;
-using DataFarm.Api.Domain.Stock;
 using DataFarm.Api.Application.Repositories;
 using DataFarm.Api.Domain.Animais.Aggregates;
 using DataFarm.Api.Domain.Exceptions;
 using DataFarm.Api.DTOs;
-using DataFarm.Api.Repositories;
 
 namespace DataFarm.Api.Application.Services;
 
