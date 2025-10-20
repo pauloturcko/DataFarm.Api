@@ -137,5 +137,25 @@ public class AnimalsController : ControllerBase
             return StatusCode(500, new { message = "Ocorreu um erro ao processar a requisição.", errorDetail = ex.Message });
         }
     }
+
+    [HttpPost("register-weight")]
+    public async Task<IActionResult> RegisterWeight([FromBody] RegisterWeightRequest request)
+    {
+        try
+        {
+            var animalAtualizado = await _animalService.RegisterWeightAsync(request);
+
+            return Ok(animalAtualizado);
+        }
+        catch (NotFoundException ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500,
+                new { message = "Ocorreu um erro ao processar a requisição.", errorDetail = ex.Message });
+        }
+    }
     
 }
