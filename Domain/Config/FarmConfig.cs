@@ -2,8 +2,8 @@
 
 public class FarmConfig
 {
-    public int Id { get; set; }
-    public int MaxAnimalCapacity { get; set; }
-    public int MaxStockCapacity { get; set; }
-    public int MinLotSizeBuy { get; set; }
+    public int Id { get; init; }
+    public int MaxAnimalCapacity { get; init; }
+    public int MaxStockCapacity { get; init; }
+    public int MinLotSizeBuy { get; init; }
 }

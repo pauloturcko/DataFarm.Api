@@ -7,8 +7,8 @@ namespace DataFarm.Api.Domain.Animais
     {
         public int Id { get; set; }
         public RacaEnum Raca { get; set; }
-        public List<Peso>? HistoricoPeso { get; set; }
-        public List<RegistroVacina>? HistoricoVacina { get; set; }
+        public List<Peso> HistoricoPeso { get; init; } = [];
+        public List<RegistroVacina> HistoricoVacina { get; init; } = [];
         public DateOnly DataChegada { get; set; }
     }
 }
