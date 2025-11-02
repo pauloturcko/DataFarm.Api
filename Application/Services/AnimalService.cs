@@ -22,7 +22,7 @@ public class AnimalService : IAnimalService
         var farmConfig = await _farmConfigRepository.GetFarmConfigAsync();
         var currentAnimals = await _animalRepository.CountAllAsync();
 
-        if ( currentAnimals >= farmConfig.MaxAnimalCapacity)
+        if ( currentAnimals >= farmConfig!.MaxAnimalCapacity)
         {
             throw new AnimalsMaxCapacityReachedException(
                 "Não foi possível realizar o cadastro. Capacidade máxima de animais atingida.");

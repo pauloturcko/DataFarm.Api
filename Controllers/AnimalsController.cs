@@ -50,7 +50,7 @@ public class AnimalsController : ControllerBase
         {
             var animalSalvo = await _animalService.CreateAnimalAsync(novoAnimal);
 
-            return CreatedAtAction(nameof(GetById), new { id = animalSalvo.Id }, animalSalvo);
+            return CreatedAtAction(nameof(GetById), new { id = animalSalvo!.Id }, animalSalvo);
         }
         catch (AnimalsMaxCapacityReachedException ex)
         {
@@ -126,7 +126,7 @@ public class AnimalsController : ControllerBase
         {
             var animalAtualizado = await _animalService.UpdateAnimalAsync(id, request);
 
-            return Ok(animalAtualizado);
+            return Ok(animalAtualizado!);
         }
         catch (NotFoundException ex)
         {

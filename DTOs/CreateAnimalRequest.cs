@@ -6,7 +6,7 @@ public class CreateAnimalRequest
 {
     // [Required] é um Data Annotation que garante que o campo não seja nulo.
     [Required(ErrorMessage = "A raça do animal é obrigatória.")]
-    public string Raca { get; set; } 
+    public string? Raca { get; set; } 
 
     // A data em que o animal chegou na fazenda.
     [Required(ErrorMessage = "A data de chegada é obrigatória.")]
