@@ -1,6 +1,6 @@
 ﻿using DataFarm.Api.Domain.Animais;
 using DataFarm.Api.Application.Repositories;
-using Microsoft.EntityFrameworkCore; // Corrigindo o namespace para Application
+using Microsoft.EntityFrameworkCore;
 
 namespace DataFarm.Api.Infra.Data; 
 
@@ -45,6 +45,11 @@ public class AnimalRepository : IAnimalRepository
     {
       return await _context.Animals.CountAsync();
     }
+    
+    public async Task<List<Animal>> GetAllAsync()
+    {
+        return await _context.Animals.ToListAsync();
+    }
 
     // Finaliza a transação: gera o SQL e envia para o PostgreSQL
     public async Task<bool> SaveChangesAsync()
@@ -53,8 +58,5 @@ public class AnimalRepository : IAnimalRepository
         return await _context.SaveChangesAsync() > 0;
     }
 
-    public async Task<List<Animal>> GetAllAsync()
-    {
-        return await _context.Animals.ToListAsync();
-    }
+
 }

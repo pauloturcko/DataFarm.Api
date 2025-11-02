@@ -41,7 +41,7 @@ public class AnimalService : IAnimalService
         if (animal == null)
         {
             throw new NotFoundException(
-                "animal", id);
+                "Animal", id);
         }
         
         return animal;
