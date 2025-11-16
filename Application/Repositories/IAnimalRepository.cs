@@ -12,7 +12,7 @@ public interface IAnimalRepository
     
     Task<Animal?> GetByIdAsync(int id);
     
-    Task<int> CountAllAsync(); // Não lembro por que criei esse método aqui
+    Task<int> CountAllAsync(); // Método para validação de animais totais na fazenda
     
     Task<bool> SaveChangesAsync();
     
