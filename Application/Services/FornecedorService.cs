@@ -36,7 +36,7 @@ public class FornecedorService : IFornecedorService
         return novoFornecedor;
     }
 
-    public async Task<Fornecedor?> UpdateFornecedorAsync(UpdateFornecedorRequest request)
+    public async Task<Fornecedor?> UpdateFornecedorAsync(int id, UpdateFornecedorRequest request)
     {
         var fornecedor = await _fornecedorRepository.GetByIdAsync(request.Id);
 

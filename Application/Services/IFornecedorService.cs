@@ -11,7 +11,8 @@ public interface IFornecedorService
     
     Task<List<Fornecedor>> GetFornecedorListAsync();
     
-    Task<Fornecedor?> UpdateFornecedorAsync(UpdateFornecedorRequest request);
+    Task<Fornecedor?> UpdateFornecedorAsync(int id, UpdateFornecedorRequest request);
    
     Task<bool> DeleteFornecedorAsync(int id);
 }
+
