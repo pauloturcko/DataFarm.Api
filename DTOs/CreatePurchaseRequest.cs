@@ -7,7 +7,7 @@ namespace DataFarm.Api.DTOs;
 public class CreatePurchaseRequest
 {
     [Required(ErrorMessage = "Informe o fornecedor")]
-    public Fornecedor FornecedorId { get; set; }
+    public int FornecedorFk { get; set; }
     
     [Required(ErrorMessage = "Informe a data da compra")]
     public DateOnly DataCompra { get; set; }

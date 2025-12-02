@@ -5,9 +5,9 @@ namespace DataFarm.Api.DTOs;
 
 public class UpdatePurchaseRequest
 {
-    public Fornecedor? Fornecedor { get; set; }
+    public int? FornecedorFk { get; set; }
     
-    public DateOnly DataCompra {  get; set; }
+    public DateOnly? DataCompra {  get; set; }
     
-    public List<Insumo>? Itens { get; set; }
+    public List<CreateInsumoRequest>? Itens { get; set; }
 }

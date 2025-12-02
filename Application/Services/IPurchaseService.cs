@@ -11,7 +11,7 @@ public interface IPurchaseService
     
     Task<List<Compra>> GetCompraListAsync();
     
-    Task<List<Compra>> UpdateCompraAsync(int id, UpdatePurchaseRequest request);
+    Task<Compra> UpdateCompraAsync(int id, UpdatePurchaseRequest request);
     
     Task<bool> DeletePurchaseAsync(int id);
 }

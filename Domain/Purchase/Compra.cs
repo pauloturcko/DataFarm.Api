@@ -6,6 +6,7 @@ namespace DataFarm.Api.Domain.Purchase;
 public class Compra
 {
     public int Id { get; set; }
+    public int FornecedorId { get; set; }
     public Fornecedor? Fornecedor { get; set; }
     public DateOnly DataCompra {  get; set; }
     public List<Insumo>? Itens { get; set; }
